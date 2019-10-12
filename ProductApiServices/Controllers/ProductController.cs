@@ -22,5 +22,11 @@ namespace ProductApiServices.Controllers
                 number = 100
             });
         }
+
+        [HttpGet("exp")]
+        public IActionResult Exp()
+        {
+            throw new Exception("test exception"); 
+        }
     }
 }

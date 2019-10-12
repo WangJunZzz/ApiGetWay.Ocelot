@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Consul;
 
 namespace ApiGetWay
 {
@@ -48,7 +49,7 @@ namespace ApiGetWay
             //services.AddAuthentication()
             //    .AddIdentityServerAuthentication(authenticationProviderKey, options);
 
-            services.AddOcelot(new ConfigurationBuilder().AddJsonFile("ocelot.json").Build());
+            services.AddOcelot(new ConfigurationBuilder().AddJsonFile("ocelot.json").Build()).AddConsul();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

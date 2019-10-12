@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Exceptionless;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,8 @@ namespace ProductApiServices
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
+            app.UseExceptionless("vJSG3kg5rMleJ4hEOfudsXNquleQU6dr8rAaIQnP");
             app.UseMvc();
         }
     }
